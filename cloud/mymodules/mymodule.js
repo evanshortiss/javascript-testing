@@ -4,7 +4,7 @@ var request = require('request'),
 exports.httpGetRequest = function(url, callback) {
     console.log('Getting url %s', url);
 
-    request.get(url, function(err, res, body) {    
+    request.get(url, function(err, res, body) {
         if (err) {
             return callback(err, null);
         } else if (res && res.statusCode != 200) {
@@ -15,10 +15,10 @@ exports.httpGetRequest = function(url, callback) {
     });
 };
 
-exports.writeTextToFileSync = function(text, file) {
-    fs.writeFileSync(file, text);
+exports.writeTextToFileSync = function(text, filepath) {
+    fs.writeFileSync(filepath, text);
 };
 
-exports.writeTextToFile = function(text, file, callback) {
-    fs.writeFileSync(file, text, callback);
+exports.writeTextToFile = function(text, filepath, callback) {
+    fs.writeFile(filepath, text, callback);
 };
