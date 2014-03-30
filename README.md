@@ -6,7 +6,8 @@ on the client and server/cloud. In this instance we are using both
 [Chai](http://chaijs.com/) to test some code.
 
 This repository is a *really* simple example of how you can test client and
-cloud code.
+cloud code. The code included isn't meant to be amazing, just easy to pick up
+and read.
 
 ## Perquisites (Required Software)
 You will need Node.js, npm and bower installed.
