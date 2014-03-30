@@ -41,9 +41,16 @@ If you have completed the previous steps then we're good to go!
 #### Client
 Open __client/default/index.html__
 
+The __client/default__ folder structure was generated using the terminal
+command ```mocha init```, simple as that! I added the bower.json for managing
+dependencies as it's very handy and simply requires typing ```bower init```.
+Adding chai was as simple as typing ```bower install chai --save-dev```.
+
 #### Cloud
-Run the following
+Run the following:
 
 ```
 mocha cloud/tests/
 ```
+
+Simply install
