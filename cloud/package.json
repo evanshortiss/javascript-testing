@@ -1,8 +1,7 @@
 {
-  "name": "fh-app",
+  "name": "testing-app",
   "version": "0.1.0",
   "dependencies" : {
-    "fh-nodeapp" : "*",
     "request": "*"
   },
   "devDependencies" : {

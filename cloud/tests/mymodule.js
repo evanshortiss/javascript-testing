@@ -7,18 +7,19 @@ var assert = require('assert'),
 
 var filepath = path.join(__dirname, 'test.txt');
 
+// Delete the file created by tests
 function removeTestTempFile(done) {
     fs.unlink(filepath, function(err) {
         done();
     });
 }
 
+// Clean up test environment
 function cleanUp(done) {
-    console.log('RUNNING CLEANUP!');
     removeTestTempFile(done);
 }
 
-// After test are done, clean up!
+// After test are done, and also before, clean up!
 after(cleanUp);
 before(cleanUp);
 
@@ -26,14 +27,26 @@ var counter = 1;
 
 describe('Test my modules', function() {
 
+    // Do this before each test category runs
     beforeEach(function() {
         console.log('Running test %d', counter);
         counter++;
     });
 
+    describe('#writeTextToFileSync function(text, filepath)', function() {
+        it('Should write file to path specified', function() {
+            myModule.writeTextToFileSync('Hello world', filepath);
+
+            // Check the file exists
+            assert.equal(true, fs.existsSync(filepath), 'File should exist');
+        });
+    });
+
     describe('#httpGetRequest function', function() {
         this.timeout(10 * 1000);
 
+        // What is 'done' here? It's injected by mocha and if used
+        // flags this test as being async
         it('Should successfully GET google.com', function(done) {
             myModule.httpGetRequest('http://www.google.com', function(err, res) {
                 expect(err).to.equal(null);
@@ -44,15 +57,8 @@ describe('Test my modules', function() {
 
     });
 
-    describe('#writeTextToFileSync function(text, filepath)', function() {
-        it('Should write file to path specified', function() {
-            myModule.writeTextToFileSync('Hello world', filepath);
-
-            assert(fs.existsSync(filepath));
-        });
-    });
-
     describe('#writeTextToFile function(text, filepath, callback)', function() {
+        // Run cleanup again...for good measure!
         before(cleanUp);
 
         it('Should asynchronously write file to path specified', function(done) {
