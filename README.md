@@ -6,7 +6,7 @@ on the client and server/cloud. In this instance we are using both
 [Chai](http://chaijs.com/) to test some code.
 
 This repository is a *really* simple example of how you can test client and
-cloud code. The code included is should be easy to pick up
+cloud code. The code included should be easy to pick up
 and read.
 
 ## Perquisites (Required Software)
