@@ -12,7 +12,8 @@ and read.
 ## Perquisites (Required Software)
 You will need [Node.js](http://nodejs.org/), [npm](https://www.npmjs.org/) and [bower](http://bower.io/) installed.
 
-Install Node.js and npm by going to [nodejs.org](http://nodejs.org/)
+Install Node.js and npm by going to the [download](http://nodejs.org/download/)
+page of [nodejs.org](http://nodejs.org/).
 
 To install bower, first ensure Node.js and npm are installed, then open a
 terminal and type ```npm install -g bower```. You may need sudo permissions.
