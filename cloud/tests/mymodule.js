@@ -37,8 +37,11 @@ describe('Test my modules', function() {
         it('Should write file to path specified', function() {
             myModule.writeTextToFileSync('Hello world', filepath);
 
-            // Check the file exists
-            assert.equal(true, fs.existsSync(filepath), 'File should exist');
+            var exists = fs.existsSync(filepath);
+            // Verify exists is true with standard node assertion
+            assert.equal(true, exists, 'File should exist');
+            // Verify exists is true with expect
+            expect(exists).to.equal(true);
         });
     });
 
@@ -47,11 +50,13 @@ describe('Test my modules', function() {
 
         // What is 'done' here? It's injected by mocha and if used
         // flags this test as being async
+        // done takes a single parameter and if this is non null then the test
+        // is considered a failure
         it('Should successfully GET google.com', function(done) {
             myModule.httpGetRequest('http://www.google.com', function(err, res) {
                 expect(err).to.equal(null);
                 expect(res).to.be.a('string');
-                done();
+                done(err);
             });
         });
 
@@ -66,7 +71,7 @@ describe('Test my modules', function() {
                 expect(err).to.equal(null);
 
                 fs.exists(filepath, function(exists) {
-                    assert(exists);
+                    assert.equal(exists, true);
                     done();
                 });
             });
