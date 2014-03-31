@@ -10,7 +10,7 @@ cloud code. The code included should be easy to pick up
 and read.
 
 ## Perquisites (Required Software)
-You will need Node.js, npm and bower installed.
+You will need [Node.js](http://nodejs.org/), [npm](https://www.npmjs.org/) and [bower](http://bower.io/) installed.
 
 Install Node.js and npm by going to [nodejs.org](http://nodejs.org/)
 
