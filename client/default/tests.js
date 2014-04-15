@@ -1,5 +1,8 @@
 (function() {
-    var expect = window.chai.expect;
+    if(!expect) {
+        // We're not running with Karma if this occurs
+        var expect = window.chai.expect;
+    }
 
     describe('Person', function() {
         it('Should create a person', function() {
