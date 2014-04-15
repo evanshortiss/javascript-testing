@@ -24,10 +24,14 @@ dependencies.
 
 #### Client Dependencies
 
+##### Option #1: Karma
 ```
 cd client/default
 npm install .
 ```
+
+##### Option #2: Bower
+bower install
 
 #### Node.js Dependencies
 
@@ -40,13 +44,23 @@ npm install .
 If you have completed the previous steps then we're good to go!
 
 #### Client
-The client will use Karma to run tests automatically in the predefined browsers in __karma.conf.js__.
+The client will use Karma to run tests automatically in the predefined
+browsers in __karma.conf.js__ or use a standard index.html file to run tests
+in the browser used to open this file.
 
+##### Karma
 ```bash
 grunt test
 ```
 
-Karma allows us to automate testing across a range of browsers. Alternatively you can open index.html which has manually included the required libraries and will run the __same__ mocha tests as Karma did. Awesome!
+Karma allows us to automate testing across a range of browsers. Alternatively
+you can open index.html which has manually included the required libraries and
+will run the __same__ mocha tests as Karma did. Awesome!
+
+##### Standard index.html (with Bower for dependencies)
+Using the same framework (mocha in this case!) we can have a HTML file
+dedicated to testing as seen in the index.html in the project. Simply open this
+file to try it out.
 
 #### Cloud
 Run the following:
@@ -54,5 +68,3 @@ Run the following:
 ```
 mocha cloud/tests/
 ```
-
-Simply install
